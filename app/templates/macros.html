@@ -11,3 +11,28 @@
     {% endfor %}
 
 {% endmacro %}
+
+{% macro displaySourceArticle(articles_list) %}
+    {% for article in articles_list %}
+
+	        <div class="row">
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                    <a href="{{article.url}}">
+                          <img src="{{article.image_url}}" alt="{{article.title}}" class="img-responsive">
+                          </a>
+                          <div class="caption">
+                            <h4><a href="{{article.url}}">{{article.title |truncate(30)}}</a></h4>
+                            <p>{{article.description | truncate(50)}}</p>
+                            <a href="{{article.url}}">Read More</a>
+                          </div>
+                          <div class="footer">
+                              <p>Published at: {{article.date_published}}</p>
+                          </div>
+                    </div>
+                </div>
+	        </div>
+
+        {% endfor %}
+
+{% endmacro %}
