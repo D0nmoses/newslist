@@ -54,3 +54,43 @@ def process_sources(sources_list):
         sources_results.append(source)
 
     return sources_results
+
+def get_articles(id):
+    """
+    Function that returns json response in list format
+    :param id: The id of the chosen source
+    :return: list of articles returned
+    """
+    url = articles_url.format(id, api_key)
+
+    with urllib.request.urlopen(url) as url:
+        data = url.read()
+        response = json.loads(data)
+
+        if response['articles']:
+            articles_results_list = response['sources']
+            article_results = process_sources(articles_results_list)
+
+    return article_results
+
+def process_articles(article_results_list):
+    """
+    Fuction that processes json result into a list
+    :return: a list of news articles
+    """
+    articles=[]
+    for item in article_results_list:
+        id = item.get('id')
+        author = item.get('author')
+        title = item.get('title')
+        description = item.get('description')
+        url = item.get('url')
+        image_url = item.get('urlToImage')
+        date_published =item.get('datePublished')
+
+        article = NewsArticle(id,author,title,description,url,image_url,date_published)
+        articles.append(article)
+
+    return articles
+
+
