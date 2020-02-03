@@ -10,7 +10,7 @@ articles_url = None
 def configure_request(app):
     global api_key, base_url, articles_url
     api_key = app.config['NEWS_API_KEY']
-    sources_url = _url = app.config['NEWS_SOURCES_BASE_URL']
+    base_url = app.config['NEWS_SOURCES_BASE_URL']
     articles_url = app.config['ARTICLES_BASE_URL']
 
 
@@ -20,12 +20,11 @@ def get_sources(category):
     :param category:
     :return: sources_results
     """
-    url = sources_url.format(category, api_key)
+    url = base_url.format(category, api_key)
 
     with urllib.request.urlopen(url) as url:
         data = url.read()
         response = json.loads(data)
-        results = None
 
         if response['sources']:
             sources_results_list = response['sources']

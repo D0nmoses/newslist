@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
+{% block content %}
 </div>
 <!-- Business Sources -->
 <h3> Business Sources</h3>
 <ul>
-    {{ macro.displaySourceList(business)}}
+    {{ macro.displaySourceList(sources)}}
 </ul>
 <!-- Sports Source  -->
 <h3> Sports Sources </h3>
 <ul>
-    {{ macro.displaySourceList(sport)}}
+    {{ macro.displaySourceList(sports)}}
 </ul>
 <!-- Technology Source-->
 <h3>Technology Sources</h3>
