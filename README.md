@@ -4,7 +4,7 @@
 ## Description
 On loading the website, the user is presented with a list of available news sources. Clicking on a news source displays relevant news articles by the source. Further clicking of the more section redirects users to the website where the article is hosted.
 ## Setup/Installation Requirements
-Users may view a working demo here:
+Users may view a working demo here: https://newslistapi.herokuapp.com/ 
 ## Known Bugs
 The user can not view the news article images and title.
 ## Technologies Used
