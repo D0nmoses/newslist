@@ -13,3 +13,6 @@ For development, the author used pycharm to develop using html, css and python3.
 [![codebeat badge](https://codebeat.co/badges/687d3dec-aceb-495f-90cf-28fe700f4558)](https://codebeat.co/projects/github-com-d0nmoses-newslist-master)
 ## Support and contact details
 In case of any problems, please email me at githinjidon@gmail.com
+
+## License
+[LICENSE](license)
