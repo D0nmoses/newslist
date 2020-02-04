@@ -16,13 +16,11 @@
     {% for article in articles_list %}
 
 	        <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="thumbnail">
-                    <a href="{{article.url}}">
-                          <img src="{{article.image_url}}" alt="{{article.title}}" class="img-responsive">
-                          </a>
+                          <img src="{{article.image_url}}" class="img-responsive">
                           <div class="caption">
-                            <h4><a href="{{article.url}}">{{article.title}}</a></h4>
+                            <h3><a href="{{article.url}}">{{article.title}}</a></h3>
                             <p>{{article.description}}</p>
                             <a href="{{article.url}}">More</a>
                           </div>

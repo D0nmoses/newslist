@@ -3,7 +3,7 @@ from .models import Source, NewsArticle
 from datetime import datetime
 
 api_key = None
-sources_url = None
+base_url = None
 articles_url = None
 
 
@@ -86,7 +86,7 @@ def process_articles(article_results_list):
         description = item.get('description')
         url = item.get('url')
         image_url = item.get('urlToImage')
-        date_published =item.get('publishedAt')
+        date_published = item.get('publishedAt')
 
         article = NewsArticle(id,author,title,description,url,image_url,date_published)
         articles.append(article)
