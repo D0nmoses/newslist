@@ -1,6 +1,5 @@
 import urllib.request, json
 from .models import Source, NewsArticle
-from datetime import datetime
 
 api_key = None
 base_url = None
